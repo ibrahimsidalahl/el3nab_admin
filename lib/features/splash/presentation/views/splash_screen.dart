@@ -1,5 +1,4 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:dio/dio.dart';
 import 'package:el3nab_admin/features/home/presentation/views/home_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import '../../../../core/storage/app_secure_storage.dart';
 import '../../../../core/utils/app_colors/app_colors.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../auth/presentation/views/sign_in_view.dart';
-import '../../../profile/data/repos/user_repo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -80,18 +78,20 @@ class _SplashScreenState extends State<SplashScreen>
     if (mounted) {
 
 
-      if (token == null) {
+      if (token == null || token.isEmpty) {
         // No token - go to sign in
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (_) => SignInView()),
         );
       } else {
-        // Token exists - check if phone is verified
-
-          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
-        }
+        // Token exists - go to home/orders screen
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => HomeScreen()),
+        );
       }
+    }
 
   }
 

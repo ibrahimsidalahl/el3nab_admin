@@ -2,8 +2,8 @@
 
 class AppConstants {
 
-// static const String baseUrl = 'https://3enab-production.up.railway.app';
-static const String baseUrl = 'https://api.3enab.site';
+static const String baseUrl = 'https://3enab-production.up.railway.app';
+// static const String baseUrl = 'https://api.3enab.site';
   static const String appTitle = 'الرجل العناب';
 
   static const String greetingMorning = 'صباح الخير 👋';

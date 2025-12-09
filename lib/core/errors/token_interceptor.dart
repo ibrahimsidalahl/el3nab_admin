@@ -98,9 +98,9 @@ class TokenInterceptor extends Interceptor {
     _isRefreshing = true;
 
     try {
-      /// 1. Refresh token request
+      /// 1. Refresh token request - using admin endpoint
       final response = await authDio.post(
-        "/api/v1/auth/refresh-token",
+        "/api/v1/admin/auth/refresh-token",
         data: {"refreshToken": refreshToken},
       );
 
