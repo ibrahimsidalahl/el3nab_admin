@@ -30,12 +30,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_screenutil: ^5.9.3
+  dio: ^5.9.0
+  dio_cache_interceptor: ^3.4.4
+  dio_cache_interceptor_hive_store: ^3.2.2
+  path_provider: ^2.1.5
+  flutter_bloc: ^9.1.1
+  shared_preferences: ^2.5.3
+  google_fonts: ^6.3.3
+  flutter_secure_storage: ^9.2.4
+  shimmer: ^3.0.0
+  intl: ^0.20.2
+  animated_text_kit: ^4.3.0
 
 dev_dependencies:
+  flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: 0.14.4
   flutter_test:
     sdk: flutter
 
@@ -45,7 +60,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
-
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/playstore.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -61,7 +79,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
+  assets: # <--- THIS LINE WAS MIS-INDENTED. It needs to be indented 2 spaces under 'flutter:'
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -87,3 +108,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_intl:
+  enabled: true
+
+flutter_native_splash:
+  color: "#ffffff"                  # لون الخلفية
+  image: assets/icons/native_splash_icon.png # الصورة اللي هتظهر في السلاش
+  android: true
+  ios: true
+  android_gravity: center
+  ios_content_mode: center
+  fullscreen: true
